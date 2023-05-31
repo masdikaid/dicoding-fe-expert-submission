@@ -5,6 +5,6 @@ console.log('Hello Coders! :)');
 const burger = document.getElementById("burger");
 const navmobile = document.getElementById("nav-mobile");
 
-burger.addEventListener("click", event => {
+burger.addEventListener("click", () => {
     navmobile.classList.toggle("nav-show");
 });
