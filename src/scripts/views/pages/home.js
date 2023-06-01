@@ -1,3 +1,6 @@
+import Restaurant from "../../data/restaurant";
+import RestaurantCard from "../component/restaurant-card";
+
 const Home = {
     render: async () => {
         return `
@@ -9,232 +12,7 @@ const Home = {
             <div tabindex="0" class="center-inline-block">
                 <h2 class="sub-title">Explore Restaurant</h2>
             </div>
-            <div class="grid">
-    
-                <div tabindex="0" class="card">
-                    <img src="https://restaurant-api.dicoding.dev/images/medium/41" alt="Bring Your Phone Cafe">
-                    <div class="content-overlay flex-column content-space-beetwen">
-                        <div class="flex card-badge content-space-beetwen">
-                            <div class="flex content-space-around align-center ratting">
-                                <img src="/assets/star.png" alt="ratting">
-                                <h3>4.6</h3>
-                            </div>
-                            <div class="flex content-space-around align-center location">
-                                <img src="/assets/ellipse.png" alt="ratting">
-                                <h3>Medan</h3>
-                            </div>
-                        </div>
-                        <div class="card-content">
-                            <h3>Bring Your Phone Cafe</h3>
-                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facilis similique sed soluta
-                                doloribus
-                                a asperiores architecto repudiandae necessitatibus, incidunt cum quos, aperiam recusandae
-                                sunt
-                                mollitia cupiditate dolores ducimus? Quaerat, quas.</p>
-                            <a class="button-cta" href="http://maps.google.com" target="_blank">Open in Google Maps </a>
-                        </div>
-                    </div>
-                </div>
-    
-                <div tabindex="0" class="card">
-                    <img src="https://restaurant-api.dicoding.dev/images/medium/07" alt="Run The Gun" srcset="">
-                    <div class="content-overlay flex-column content-space-beetwen">
-                        <div class="flex card-badge content-space-beetwen">
-                            <div class="flex content-space-around align-center ratting">
-                                <img src="/assets/star.png" alt="ratting">
-                                <h3>4.6</h3>
-                            </div>
-                            <div class="flex content-space-around align-center location">
-                                <img src="/assets/ellipse.png" alt="location">
-                                <h3>Bali</h3>
-                            </div>
-                        </div>
-                        <div class="card-content">
-                            <h3>Run The Gun</h3>
-                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facilis similique sed soluta
-                                doloribus
-                                a asperiores architecto repudiandae necessitatibus, incidunt cum quos, aperiam recusandae
-                                sunt
-                                mollitia cupiditate dolores ducimus? Quaerat, quas.</p>
-                            <a class="button-cta" href="http://maps.google.com" target="_blank">Open in Google Maps </a>
-                        </div>
-                    </div>
-                </div>
-    
-                <div tabindex="0" class="card">
-                    <img src="https://restaurant-api.dicoding.dev/images/medium/29" alt="pangsit-express"
-                         srcset="">
-                    <div class="content-overlay flex-column content-space-beetwen">
-                        <div class="flex card-badge content-space-beetwen">
-                            <div class="flex content-space-around align-center ratting">
-                                <img src="/assets/star.png" alt="ratting">
-                                <h3>4.8</h3>
-                            </div>
-                            <div class="flex content-space-around align-center location">
-                                <img src="/assets/ellipse.png" alt="location">
-                                <h3>Ternate</h3>
-                            </div>
-                        </div>
-                        <div class="card-content">
-                            <h3>Pangsit Express</h3>
-                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facilis similique sed soluta
-                                doloribus
-                                a asperiores architecto repudiandae necessitatibus, incidunt cum quos, aperiam recusandae
-                                sunt
-                                mollitia cupiditate dolores ducimus? Quaerat, quas.</p>
-                            <a class="button-cta" href="http://maps.google.com" target="_blank">Open in Google Maps </a>
-                        </div>
-                    </div>
-                </div>
-    
-                <div tabindex="0" class="card">
-                    <img src="https://restaurant-api.dicoding.dev/images/medium/38" alt="ducky-duck" srcset="">
-                    <div class="content-overlay flex-column content-space-beetwen">
-                        <div class="flex card-badge content-space-beetwen">
-                            <div class="flex content-space-around align-center ratting">
-                                <img src="/assets/star.png" alt="ratting">
-                                <h3>4.7</h3>
-                            </div>
-                            <div class="flex content-space-around align-center location">
-                                <img src="/assets/ellipse.png" alt="location">
-                                <h3>Malang</h3>
-                            </div>
-                        </div>
-                        <div class="card-content">
-                            <h3>Ducky Duck</h3>
-                            <p>But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain
-                                was
-                                born and I will give you a complete account of the system, and expound the actual teachings
-                                of
-                                the great explorer of the truth.</p>
-                            <a class="button-cta" href="http://maps.google.com" target="_blank">Open in Google Maps </a>
-                        </div>
-                    </div>
-                </div>
-    
-                <div tabindex="0" class="card">
-                    <img src="https://restaurant-api.dicoding.dev/images/medium/40" alt="kafein" srcset="">
-                    <div class="content-overlay flex-column content-space-beetwen">
-                        <div class="flex card-badge content-space-beetwen">
-                            <div class="flex content-space-around align-center ratting">
-                                <img src="/assets/star.png" alt="ratting">
-                                <h3>3.8</h3>
-                            </div>
-                            <div class="flex content-space-around align-center location">
-                                <img src="/assets/ellipse.png" alt="location">
-                                <h3>Bali</h3>
-                            </div>
-                        </div>
-                        <div class="card-content">
-                            <h3>Kafein</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
-                                Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur
-                                ridiculus
-                                mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.</p>
-                            <a class="button-cta" href="http://maps.google.com" target="_blank">Open in Google Maps </a>
-                        </div>
-                    </div>
-                </div>
-    
-                <div tabindex="0" class="card">
-                    <img src="https://restaurant-api.dicoding.dev/images/medium/08" alt="makan-mudah" srcset="">
-                    <div class="content-overlay flex-column content-space-beetwen">
-                        <div class="flex card-badge content-space-beetwen">
-                            <div class="flex content-space-around align-center ratting">
-                                <img src="/assets/star.png" alt="ratting">
-                                <h3>4.6</h3>
-                            </div>
-                            <div class="flex content-space-around align-center location">
-                                <img src="/assets/ellipse.png" alt="location">
-                                <h3>Malang</h3>
-                            </div>
-                        </div>
-                        <div class="card-content">
-                            <h3>Makan Mudah</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
-                                Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur
-                                ridiculus
-                                mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.</p>
-                            <a class="button-cta" href="http://maps.google.com" target="_blank">Open in Google Maps </a>
-                        </div>
-                    </div>
-                </div>
-    
-                <div tabindex="0" class="card">
-                    <img src="https://restaurant-api.dicoding.dev/images/medium/08" alt="makan-mudah" srcset="">
-                    <div class="content-overlay flex-column content-space-beetwen">
-                        <div class="flex card-badge content-space-beetwen">
-                            <div class="flex content-space-around align-center ratting">
-                                <img src="/assets/star.png" alt="ratting">
-                                <h3>3.6</h3>
-                            </div>
-                            <div class="flex content-space-around align-center location">
-                                <img src="/assets/ellipse.png" alt="location">
-                                <h3>Surabaya</h3>
-                            </div>
-                        </div>
-                        <div class="card-content">
-                            <h3>Saya Suka</h3>
-                            <p>But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain
-                                was
-                                born and I will give you a complete account of the system, and expound the actual teachings
-                                of
-                                the great explorer of the truth.</p>
-                            <a class="button-cta" href="http://maps.google.com" target="_blank">Open in Google Maps </a>
-                        </div>
-                    </div>
-                </div>
-    
-                <div tabindex="0" class="card">
-                    <img src="https://restaurant-api.dicoding.dev/images/medium/45" alt="gigitan-cepat" srcset="">
-                    <div class="content-overlay flex-column content-space-beetwen">
-                        <div class="flex card-badge content-space-beetwen">
-                            <div class="flex content-space-around align-center ratting">
-                                <img src="/assets/star.png" alt="ratting">
-                                <h3>4.0</h3>
-                            </div>
-                            <div class="flex content-space-around align-center location">
-                                <img src="/assets/ellipse.png" alt="location">
-                                <h3>Aceh</h3>
-                            </div>
-                        </div>
-                        <div class="card-content">
-                            <h3>Gigitan Cepat</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
-                                Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur
-                                ridiculus
-                                mus. Donec quam felis.</p>
-                            <a class="button-cta" href="http://maps.google.com" target="_blank">Open in Google Maps </a>
-                        </div>
-                    </div>
-                </div>
-    
-                <div tabindex="0" class="card">
-                    <img src="https://restaurant-api.dicoding.dev/images/medium/45" alt="fairy-cafe" srcset="">
-                    <div class="content-overlay flex-column content-space-beetwen">
-                        <div class="flex card-badge content-space-beetwen">
-                            <div class="flex content-space-around align-center ratting">
-                                <img src="/assets/star.png" alt="ratting">
-                                <h3>3.9</h3>
-                            </div>
-                            <div class="flex content-space-around align-center location">
-                                <img src="/assets/ellipse.png" alt="location">
-                                <h3>Malang</h3>
-                            </div>
-                        </div>
-                        <div class="card-content">
-                            <h3>Fairy Cafe</h3>
-                            <p>But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain
-                                was
-                                born and I will give you a complete account of the system, and expound the actual teachings
-                                of
-                                the great explorer of the truth.</p>
-                            <a class="button-cta" href="http://maps.google.com" target="_blank">Open in Google Maps </a>
-                        </div>
-                    </div>
-                </div>
-    
-            </div>
+            <div id="home_explore" class="grid"></div>
             <a class="cta-link" href="#">Explore More Restaurant</a>
         </div>
         <div class="flex content-space-beetwen sponsors">
@@ -283,7 +61,11 @@ const Home = {
     `
     },
     afterRender: async () => {
-
+        const restaurants = await Restaurant.list();
+        const restaurantContainer = document.querySelector('#home_explore');
+        restaurants.forEach((restaurant, index) => {
+            if (index <= 5) restaurantContainer.innerHTML += RestaurantCard.render(restaurant);
+        });
     }
 }
 
