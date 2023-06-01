@@ -1,4 +1,6 @@
 import DrawerInitiator from "../utils/drawer-initiator";
+import Parser from "../routes/parser";
+import Routes from "../routes/routes";
 
 export default class App {
     constructor({navToggle, nav, main}) {
@@ -16,5 +18,12 @@ export default class App {
                 main: this._main
             }
         );
+    }
+
+    async renderPage() {
+        const url = Parser.parseActiveUrlWithCombiner();
+        const page = Routes[url];
+        this._main.innerHTML = await page.render();
+        await page.afterRender();
     }
 }
