@@ -1,8 +1,10 @@
+import CONFIG from "../../global/config";
+
 const RestaurantCard = {
     render(restaurant) {
         return `
             <div tabindex="0" class="card">
-                <img src="https://restaurant-api.dicoding.dev/images/medium/41" alt="Bring Your Phone Cafe">
+                <img src="${CONFIG.MEDIUM_IMAGE_URL + restaurant.pictureId}" alt="Bring Your Phone Cafe">
                 <div class="content-overlay flex-column content-space-beetwen">
                     <div class="flex card-badge content-space-beetwen">
                         <div class="flex content-space-around align-center ratting">

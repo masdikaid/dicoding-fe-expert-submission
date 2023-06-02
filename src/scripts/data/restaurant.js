@@ -6,4 +6,9 @@ export default class Restaurant {
         const data = await HTTP.get(ENDPOINT.LIST);
         return data.restaurants;
     }
+
+    static async detail(id) {
+        const data = await HTTP.get(ENDPOINT.DETAIL(id));
+        return data.restaurant;
+    }
 }

@@ -129,10 +129,95 @@
 
 .jumbotron {
     width: 100%;
-    height: 630px;
+    height: 400px;
     object-fit: cover;
     object-position: center;
     position: relative;
+    /*contrast drop*/
+    filter: contrast(60%);
+}
+
+.ratting-card {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+.flex-col {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.detail-review {
+    margin: 15px 0;
+    max-height: 300px;
+    overflow: auto;
+}
+
+.review-card {
+    padding: 15px;
+    border-radius: 10px;
+    background-color: #d2d2d2;
+    margin-bottom: 15px;
+}
+
+.review-card p {
+    margin: 5px 0;
+}
+
+.review-date {
+    font-size: 11px;
+    font-weight: 300;
+    padding-left: 4px;
+
+}
+
+.flex-wrap {
+    flex-wrap: wrap;
+}
+
+.menus-section h4 {
+    margin-bottom: 15px;
+}
+
+.menus-section #detail_foods,
+.menus-section #detail_drinks {
+    margin-bottom: 30px;
+}
+
+.badge {
+    background-color: #d2d2d2;
+    border-radius: 10px;
+    padding: 5px 10px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    white-space: nowrap;
+    text-wrap: none;
+}
+
+.detail-address {
+    margin: 15px 0;
+}
+
+.detail-description {
+    margin: 15px 0;
+    text-align: justify;
+}
+
+.text-middle {
+    text-align: center;
 }
 
 .full-container h3 {
