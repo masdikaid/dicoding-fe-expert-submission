@@ -6,7 +6,8 @@
   "scripts": {
     "start-dev": "webpack-dev-server --config webpack.dev.js",
     "build": "webpack --config webpack.prod.js",
-    "test": "karma start"
+    "test": "karma start",
+    "serve": "http-server dist"
   },
   "keywords": [],
   "author": "masdika id <masdikaid@gmail.com>",
@@ -36,6 +37,9 @@
     "whatwg-fetch": "3.6.0"
   },
   "dependencies": {
-    "regenerator-runtime": "0.13.9"
+    "http-server": "^14.1.1",
+    "regenerator-runtime": "0.13.9",
+    "workbox-webpack-plugin": "^7.0.0",
+    "workbox-window": "^7.0.0"
   }
 }
