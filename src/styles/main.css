@@ -68,7 +68,7 @@ button {
 
 .grid {
     display: grid;
-    grid-template-columns: auto;
+    grid-template-columns: 320px;
     grid-gap: 25px;
 }
 
@@ -519,7 +519,7 @@ iframe {
     }
 
     .grid {
-        grid-template-columns: auto auto;
+        grid-template-columns: 320px 320px;
     }
 
     .sponsor-title, .about-title {
@@ -559,6 +559,6 @@ iframe {
 @media only screen and (min-width: 1024px) {
 
     .grid {
-        grid-template-columns: auto auto auto;
+        grid-template-columns: 320px 320px 320px;
     }
 }
