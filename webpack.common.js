@@ -39,9 +39,6 @@ module.exports = {
                     to: path.resolve(__dirname, 'dist/'),
                 },
             ],
-        }),
-        new WorkboxWebpackPlugin.GenerateSW({
-            swDest: './sw.bundle.js',
-        }),
+        })
     ],
 };

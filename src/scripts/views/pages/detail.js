@@ -1,6 +1,21 @@
 import Parser from "../../routes/parser";
-import Restaurant from "../../data/restaurant";
+import RestaurantApi from "../../data/restaurant-api";
 import CONFIG from "../../global/config";
+import LikeButtonInitiator from "../../utils/like-button-initiator";
+
+const FavouriteButton = status => {
+    if (status) {
+        return `
+            <i class="fa fa-heart text-red" aria-hidden="true"></i>
+            <h4 id="detail_city" class="text-middle">Favorit</h4>
+        `
+    } else {
+        return `
+            <i class="fa fa-heart-o text-red" aria-hidden="true"></i>
+            <h4 id="detail_city" class="text-middle">Tambah Favorit</h4>
+        `
+    }
+}
 
 const Detail = {
     render: async () => {
@@ -15,9 +30,11 @@ const Detail = {
                     <h4>⭐</h4>
                     <h4 id="detail_rating" class="text-middle">3.2</h4>
                 </div>
-                <div class="flex-row">
-                    <h4 id="detail_city" class="text-middle badge">Magelang</h4>
+                <div class="flex-row badge">
+                    <h4 id="detail_city" class="text-middle">Magelang</h4>
                 </div>
+                <button aria-label="favourite button" id="favourite" class="flex-row badge">
+                </button>
             </div>
             <div class="detail-body">
                 <p id="detail_address" class="detail-address">Jl. Asem jaya Gg. Belimbing No.003 Mustika Jaya</p>
@@ -44,10 +61,10 @@ const Detail = {
         const restaurantFoods = document.querySelector('#detail_foods');
         const restaurantDrinks = document.querySelector('#detail_drinks');
         const restaurantReview = document.querySelector('#detail_review');
+        const favouriteButton = document.querySelector('#favourite');
 
         const restaurantId = Parser.parseActiveUrlWithoutCombiner().id;
-        const restaurant = await Restaurant.detail(restaurantId);
-        console.log(restaurant);
+        const restaurant = await RestaurantApi.detail(restaurantId);
 
         restaurantImage.src = CONFIG.LARGE_IMAGE_URL + restaurant.pictureId;
         restaurantTitle.innerHTML = restaurant.name;
@@ -78,7 +95,20 @@ const Detail = {
                 </div>
             `
         });
+
+        LikeButtonInitiator.init({
+            likeButtonContainer: favouriteButton,
+            restaurant: {
+                id: restaurant.id,
+                name: restaurant.name,
+                description: restaurant.description,
+                city: restaurant.city,
+                rating: restaurant.rating,
+                pictureId: restaurant.pictureId
+            }
+        });
     }
 }
 
 export default Detail;
+export {FavouriteButton};

@@ -1,4 +1,4 @@
-import Restaurant from "../../data/restaurant";
+import RestaurantApi from "../../data/restaurant-api";
 import RestaurantCard from "../component/restaurant-card";
 
 const All = {
@@ -13,7 +13,7 @@ const All = {
     `
     },
     afterRender: async () => {
-        const restaurants = await Restaurant.list();
+        const restaurants = await RestaurantApi.list();
         const restaurantContainer = document.querySelector('#all_explore');
         restaurants.forEach((restaurant, index) => {
             restaurantContainer.innerHTML += RestaurantCard.render(restaurant);

@@ -5,7 +5,7 @@ const RestaurantCard = {
         return `
             <div tabindex="0" class="card">
                 <img src="${CONFIG.MEDIUM_IMAGE_URL + restaurant.pictureId}" alt="Bring Your Phone Cafe">
-                <div class="content-overlay flex-column content-space-beetwen">
+                <div class="content-overlay h-full flex-column content-space-beetwen">
                     <div class="flex card-badge content-space-beetwen">
                         <div class="flex content-space-around align-center ratting">
                             <img src="/assets/star.png" alt="ratting">
