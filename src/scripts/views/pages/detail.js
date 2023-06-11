@@ -46,7 +46,13 @@ const Detail = {
             <div id="detail_foods" class="flex-row flex-wrap"></div>
             <h4>Minuman</h4>   
             <div id="detail_drinks" class="flex-row flex-wrap"></div>
-            <h4>Review</h4>   
+            <h4>Review</h4>
+            <form id="review_form">
+                <input class="review-input" type="text" placeholder="Nama anda...">
+                <textarea class="review-input" rows="5" placeholder="Tulis review anda disini..."></textarea>
+                <p id="err_review_form" class="text-error text-red"></p>
+                <button class="button-cta">Kirim</button>
+            </form>   
             <div id="detail_review" class="detail-review flex-col"></div>
         </div>
     `
@@ -62,6 +68,7 @@ const Detail = {
         const restaurantDrinks = document.querySelector('#detail_drinks');
         const restaurantReview = document.querySelector('#detail_review');
         const favouriteButton = document.querySelector('#favourite');
+        const reviewForm = document.querySelector('#review_form');
 
         const restaurantId = Parser.parseActiveUrlWithoutCombiner().id;
         const restaurant = await RestaurantApi.detail(restaurantId);
@@ -86,7 +93,7 @@ const Detail = {
                 </div>
             `
         });
-        restaurant?.customerReviews.forEach((review) => {
+        restaurant?.customerReviews.reverse().forEach((review) => {
             restaurantReview.innerHTML += `
                 <p class="review-date">${review.date}</p>
                 <div class="review-card">
@@ -107,6 +114,43 @@ const Detail = {
                 pictureId: restaurant.pictureId
             }
         });
+
+        reviewForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const errReviewForm = document.querySelector('#err_review_form');
+            const name = e.target[0].value;
+            const review = e.target[1].value;
+            const submitButton = e.target[2];
+
+            submitButton.disabled = true;
+            if (name === '' || review === '') {
+                errReviewForm.innerHTML = 'Nama dan review tidak boleh kosong';
+                submitButton.disabled = false;
+                return;
+            } else {
+                errReviewForm.innerHTML = '';
+            }
+
+            try {
+                const reviewRes = await RestaurantApi.review({id: restaurantId, name: name, review: review});
+                restaurantReview.innerHTML = '';
+                reviewRes.forEach((review) => {
+                    restaurantReview.innerHTML += `
+                        <p class="review-date">${review.date}</p>
+                        <div class="review-card">
+                            <h5>${review.name}</h5>
+                            <p>${review.review}</p>
+                        </div>
+                `
+                });
+            } catch (e) {
+                errReviewForm.innerHTML = e.message;
+                submitButton.disabled = false;
+            } finally {
+                reviewForm.reset();
+                submitButton.innerHTML = 'Terima kasih';
+            }
+        })
     }
 }
 

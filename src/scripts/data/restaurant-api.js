@@ -11,4 +11,9 @@ export default class RestaurantApi {
         const data = await HTTP.get(ENDPOINT.DETAIL(id));
         return data.restaurant;
     }
+
+    static async review(data) {
+        const response = await HTTP.post(ENDPOINT.REVIEW, data);
+        return response.customerReviews.reverse();
+    }
 }

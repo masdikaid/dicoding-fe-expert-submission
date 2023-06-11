@@ -224,6 +224,13 @@ button {
     color: #f84646;
 }
 
+.text-error {
+    font-size: 12px;
+    font-weight: 300;
+    margin-top: 15px;
+    text-align: center;
+}
+
 .detail-address {
     margin: 15px 0;
 }
@@ -316,6 +323,12 @@ img {
     font-weight: bold;
     text-decoration: none;
     border: 0 none;
+}
+
+.button-cta:disabled {
+    background-color: #d03114;
+    color: #FFFFFF;
+    cursor: not-allowed;
 }
 
 .ratting {
