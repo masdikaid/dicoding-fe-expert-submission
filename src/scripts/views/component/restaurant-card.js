@@ -1,8 +1,8 @@
-import CONFIG from "../../global/config";
+import CONFIG from '../../global/config';
 
 const RestaurantCard = {
-    render(restaurant) {
-        return `
+  render(restaurant) {
+    return `
             <div tabindex="0" class="card">
                 <img src="${CONFIG.MEDIUM_IMAGE_URL + restaurant.pictureId}" alt="Bring Your Phone Cafe">
                 <div class="content-overlay h-full flex-column content-space-beetwen">
@@ -23,8 +23,8 @@ const RestaurantCard = {
                     </div>
                 </div>
             </div>
-        `
-    }
-}
+        `;
+  }
+};
 
 export default RestaurantCard;

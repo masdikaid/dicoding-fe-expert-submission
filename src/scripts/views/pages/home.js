@@ -1,9 +1,8 @@
-import RestaurantApi from "../../data/restaurant-api";
-import RestaurantCard from "../component/restaurant-card";
+import RestaurantApi from '../../data/restaurant-api';
+import RestaurantCard from '../component/restaurant-card';
 
 const Home = {
-    render: async () => {
-        return `
+  render: async () => `
         <div tabindex="0" class="full-container">
             <img class="jumbotron" src="/images/heros/hero-image_4.jpg" alt="jumbotron banner"/>
             <h3 class="content-overlay cus-title">Food For Everyone</h3>
@@ -58,15 +57,14 @@ const Home = {
                 </h2>
             </div>
         </div>
-    `
-    },
-    afterRender: async () => {
-        const restaurants = await RestaurantApi.list();
-        const restaurantContainer = document.querySelector('#home_explore');
-        restaurants.forEach((restaurant, index) => {
-            if (index <= 5) restaurantContainer.innerHTML += RestaurantCard.render(restaurant);
-        });
-    }
-}
+    `,
+  afterRender: async () => {
+    const restaurants = await RestaurantApi.list();
+    const restaurantContainer = document.querySelector('#home_explore');
+    restaurants.forEach((restaurant, index) => {
+      if (index <= 5) restaurantContainer.innerHTML += RestaurantCard.render(restaurant);
+    });
+  }
+};
 
 export default Home;
