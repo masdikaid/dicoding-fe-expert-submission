@@ -23,7 +23,7 @@ const Detail = {
             <h3 id="detail_title" class="content-overlay cus-title">Food For Everyone</h3>
         </div>
         <div class="container bg-theme">
-            <div class="ratting-card">
+            <div class="ratting-card" id="content">
                 <div class="flex-row badge">
                     <h4>⭐</h4>
                     <h4 id="detail_rating" class="text-middle">3.2</h4>

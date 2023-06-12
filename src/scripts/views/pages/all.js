@@ -5,7 +5,7 @@ const All = {
   render: async () => `
         <div class="container bg-theme">
             <div tabindex="0" class="center-inline-block">
-                <h2 class="sub-title">All Restaurant</h2>
+                <h2 class="sub-title" id="content">All Restaurant</h2>
             </div>
             <div id="all_explore" class="grid"></div>
             <p id="not_found_message" class="not-found-message">No Favorite Restaurant Found</p>

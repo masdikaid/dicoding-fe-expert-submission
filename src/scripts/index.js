@@ -6,7 +6,8 @@ import swRegister from './utils/sw-register';
 const app = new App({
   navToggle: document.querySelector('#burger'),
   nav: document.querySelector('#nav-mobile'),
-  main: document.querySelector('main')
+  main: document.querySelector('main'),
+  skipContent: document.querySelector('#skip-link')
 });
 
 window.addEventListener('hashchange', () => {

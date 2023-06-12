@@ -5,6 +5,10 @@
     box-sizing: border-box;
 }
 
+a {
+    min-height: 44px;
+}
+
 button {
     cursor: pointer;
     outline: none;
@@ -511,10 +515,13 @@ iframe {
 
 .skip-link {
     position: absolute;
+    display: flex;
+    align-items: center;
     top: -200px;
     left: 0;
     margin: 20px;
     background-color: #bf1722;
+    text-decoration: none;
     color: white;
     border-radius: 10px;
     padding: 8px;

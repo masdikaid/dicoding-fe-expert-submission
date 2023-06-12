@@ -9,7 +9,7 @@ const Home = {
         </div>
         <div class="container bg-theme">
             <div tabindex="0" class="center-inline-block">
-                <h2 class="sub-title">Explore Restaurant</h2>
+                <h2 class="sub-title" id="content">Explore Restaurant</h2>
             </div>
             <div id="home_explore" class="grid"></div>
             <a class="cta-link" href="#/all">Explore More Restaurant</a>

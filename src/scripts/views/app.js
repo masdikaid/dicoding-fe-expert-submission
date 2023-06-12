@@ -6,11 +6,13 @@ export default class App {
   constructor({
     navToggle,
     nav,
-    main
+    main,
+    skipContent
   }) {
     this._navToggle = navToggle;
     this._nav = nav;
     this._main = main;
+    this._skipContent = skipContent;
 
     this._initAppShell();
   }
@@ -27,6 +29,13 @@ export default class App {
     const url = Parser.parseActiveUrlWithCombiner();
     const page = Routes[url];
     this._main.innerHTML = await page.render();
+
+    this._skipContent.addEventListener('click', (e) => {
+      e.preventDefault();
+      document.querySelector('#content')
+        .scrollIntoView({ behavior: 'smooth' });
+    });
+
     await page.afterRender();
   }
 }
