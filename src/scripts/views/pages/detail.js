@@ -140,7 +140,7 @@ const Detail = {
                         <p class="review-date">${rev.date}</p>
                         <div class="review-card">
                             <h5>${rev.name}</h5>
-                            <p>${rev.rev}</p>
+                            <p>${rev.review}</p>
                         </div>
                 `;
         });
