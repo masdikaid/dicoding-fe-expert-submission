@@ -72,7 +72,7 @@ button {
 
 .grid {
     display: grid;
-    grid-template-columns: 320px;
+    grid-template-columns: minmax(230px, 420px);
     grid-gap: 25px;
 }
 
@@ -157,6 +157,7 @@ button {
     align-items: stretch;
     gap: 15px;
     margin-bottom: 30px;
+    overflow-x: scroll;
 }
 
 .flex-row {
@@ -546,7 +547,7 @@ iframe {
     }
 
     .grid {
-        grid-template-columns: 320px 320px;
+        grid-template-columns: repeat(2, minmax(230px, 320px));
     }
 
     .sponsor-title, .about-title {
@@ -586,6 +587,13 @@ iframe {
 @media only screen and (min-width: 1024px) {
 
     .grid {
-        grid-template-columns: 320px 320px 320px;
+        grid-template-columns: repeat(2, minmax(320px, 420px));
+    }
+}
+
+@media only screen and (min-width: 1440px) {
+
+    .grid {
+        grid-template-columns: repeat(3, minmax(320px, 420px));
     }
 }
