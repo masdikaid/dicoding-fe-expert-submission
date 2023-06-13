@@ -3,13 +3,13 @@ import RestaurantCard from '../component/restaurant-card';
 
 const Home = {
   render: async () => `
-        <div tabindex="0" class="full-container">
+        <div class="full-container">
             <img class="jumbotron" src="/images/heros/hero-image_4.jpg" alt="jumbotron banner"/>
             <h3 class="content-overlay cus-title">Food For Everyone</h3>
         </div>
         <div class="container bg-theme">
-            <div tabindex="0" class="center-inline-block">
-                <h2 class="sub-title" id="content">Explore Restaurant</h2>
+            <div class="center-inline-block">
+                <h2 class="sub-title" tabindex="0" id="content">Explore Restaurant</h2>
             </div>
             <div id="home_explore" class="grid"></div>
             <a class="cta-link" href="#/all">Explore More Restaurant</a>

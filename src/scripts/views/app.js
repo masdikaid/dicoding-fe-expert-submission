@@ -33,7 +33,15 @@ export default class App {
     this._skipContent.addEventListener('click', (e) => {
       e.preventDefault();
       document.querySelector('#content')
-        .scrollIntoView({ behavior: 'smooth' });
+        .focus();
+    });
+
+    this._skipContent.addEventListener('keyup', (e) => {
+      if (e.keyCode === 13 || e.keyCode === 32) {
+        e.preventDefault();
+        document.querySelector('#content')
+          .focus();
+      }
     });
 
     await page.afterRender();

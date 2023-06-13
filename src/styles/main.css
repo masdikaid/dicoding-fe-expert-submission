@@ -9,6 +9,7 @@ a {
     min-height: 44px;
 }
 
+
 button {
     cursor: pointer;
     outline: none;
@@ -531,6 +532,10 @@ iframe {
 
 .skip-link:focus {
     top: 0;
+}
+
+button:focus {
+    outline: 5px auto -webkit-focus-ring-color;
 }
 
 @media only screen and (min-width: 768px) {

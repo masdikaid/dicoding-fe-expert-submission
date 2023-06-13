@@ -3,7 +3,7 @@ import CONFIG from '../../global/config';
 const RestaurantCard = {
   render(restaurant) {
     return `
-            <div tabindex="0" class="card">
+            <div tabindex="0" aria-label="${restaurant.name}" class="card">
                 <img src="${CONFIG.MEDIUM_IMAGE_URL + restaurant.pictureId}" alt="Bring Your Phone Cafe">
                 <div class="content-overlay h-full flex-column content-space-beetwen">
                     <div class="flex card-badge content-space-beetwen">
@@ -19,7 +19,7 @@ const RestaurantCard = {
                     <div class="card-content">
                         <h3>${restaurant.name}</h3>
                         <p>${restaurant.description.substring(0, 200)}...</p>
-                        <a class="button-cta" href="#/detail/${restaurant.id}">See Detail</a>
+                        <a class="button-cta" aria-label="see details ${restaurant.name}" href="#/detail/${restaurant.id}">See Detail</a>
                     </div>
                 </div>
             </div>

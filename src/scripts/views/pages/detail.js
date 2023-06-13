@@ -18,12 +18,12 @@ const FavouriteButton = (status) => {
 
 const Detail = {
   render: async () => `
-        <div tabindex="0" class="full-container">
+        <div class="full-container">
             <img class="jumbotron" id="detail_picture" src="/images/heros/merchant.png" alt="jumbotron banner"/>
-            <h3 id="detail_title" class="content-overlay cus-title">Food For Everyone</h3>
+            <h3 tabindex="0" id="content" class="content-overlay cus-title">Food For Everyone</h3>
         </div>
         <div class="container bg-theme">
-            <div class="ratting-card" id="content">
+            <div class="ratting-card">
                 <div class="flex-row badge">
                     <h4>⭐</h4>
                     <h4 id="detail_rating" class="text-middle">3.2</h4>
@@ -31,7 +31,7 @@ const Detail = {
                 <div class="flex-row badge">
                     <h4 id="detail_city" class="text-middle">Magelang</h4>
                 </div>
-                <button aria-label="favourite button" id="favourite" class="flex-row badge">
+                <button aria-label="favourite button" id="favourite" type="button" class="flex-row badge">
                 </button>
             </div>
             <div class="detail-body">
@@ -49,14 +49,14 @@ const Detail = {
                 <input class="review-input" type="text" placeholder="Nama anda...">
                 <textarea class="review-input" rows="5" placeholder="Tulis review anda disini..."></textarea>
                 <p id="err_review_form" class="text-error text-red"></p>
-                <button class="button-cta">Kirim</button>
+                <button type="submit" class="button-cta">Kirim</button>
             </form>   
             <div id="detail_review" class="detail-review flex-col"></div>
         </div>
     `,
   afterRender: async () => {
     const restaurantImage = document.querySelector('#detail_picture');
-    const restaurantTitle = document.querySelector('#detail_title');
+    const restaurantTitle = document.querySelector('#content');
     const restaurantRating = document.querySelector('#detail_rating');
     const restaurantCity = document.querySelector('#detail_city');
     const restaurantAddress = document.querySelector('#detail_address');
