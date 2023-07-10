@@ -6,13 +6,13 @@ import LikeButtonInitiator from '../../utils/like-button-initiator';
 const FavouriteButton = (status) => {
   if (status) {
     return `
-            <i class="fa fa-heart text-red" aria-hidden="true"></i>
-            <h4 id="detail_city" class="text-middle">Favorit</h4>
+            <i class="fa fa-heart text-red" aria-label="Unlike this restaurant" aria-hidden="true"></i>
+            <h4 id="fav-label" class="text-middle">Favorit</h4>
         `;
   }
   return `
-            <i class="fa fa-heart-o text-red" aria-hidden="true"></i>
-            <h4 id="detail_city" class="text-middle">Tambah Favorit</h4>
+            <i class="fa fa-heart-o text-red" aria-label="Like this restaurant" aria-hidden="true"></i>
+            <h4 id="fav-label" class="text-middle">Tambah Favorit</h4>
         `;
 };
 
