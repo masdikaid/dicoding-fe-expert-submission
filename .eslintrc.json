@@ -16,6 +16,7 @@
     "comma-dangle": "off",
     "no-underscore-dangle": "off",
     "import/no-cycle": "off",
-    "no-undef": "off"
+    "no-undef": "off",
+    "import/no-extraneous-dependencies": "off"
   }
 }

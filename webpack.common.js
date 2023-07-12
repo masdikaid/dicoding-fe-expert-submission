@@ -1,14 +1,9 @@
 require('workbox-webpack-plugin');
 const path = require('path');
-// eslint-disable-next-line import/no-extraneous-dependencies
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-// eslint-disable-next-line import/no-extraneous-dependencies
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-// eslint-disable-next-line import/no-extraneous-dependencies
 const ImageminWebpackPlugin = require('imagemin-webpack-plugin').default;
-// eslint-disable-next-line import/no-extraneous-dependencies
 const ImageminMozjpeg = require('imagemin-mozjpeg');
-// eslint-disable-next-line import/no-extraneous-dependencies
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 
 module.exports = {
