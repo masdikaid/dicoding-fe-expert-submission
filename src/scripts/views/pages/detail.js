@@ -49,8 +49,8 @@ const Detail = {
             <div id="detail_drinks" class="flex-row flex-wrap"></div>
             <h4>Review</h4>
             <form id="review_form">
-                <input class="review-input" type="text" placeholder="Nama anda...">
-                <textarea class="review-input" rows="5" placeholder="Tulis review anda disini..."></textarea>
+                <input class="review-input" name="nama" type="text" placeholder="Nama anda...">
+                <textarea class="review-input" name="review" rows="5" placeholder="Tulis review anda disini..."></textarea>
                 <p id="err_review_form" class="text-error text-red"></p>
                 <button type="submit" class="button-cta">Kirim</button>
             </form>   

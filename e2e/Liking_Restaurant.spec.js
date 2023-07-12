@@ -1,23 +1,23 @@
 Feature('Liking Restaurant');
 
-Scenario('Visit Page', (I) => {
+Scenario('Visit Page', ({ I }) => {
   I.amOnPage('/');
   I.see('Explore Restaurant');
 });
 
-Scenario('Restaurant list loaded', async (I) => {
+Scenario('Restaurant list loaded', async ({ I }) => {
   I.amOnPage('/');
   I.seeElement('.card');
   I.see('See Detail', '.button-cta');
 });
 
-Scenario('View detail restaurant', async (I) => {
+Scenario('View detail restaurant', async ({ I }) => {
   I.amOnPage('/');
   I.click(locate('.button-cta')
     .first());
 });
 
-Scenario('Like a restaurant', async (I) => {
+Scenario('Like a restaurant', async ({ I }) => {
   I.amOnPage('/');
   I.click(locate('.button-cta')
     .first());
@@ -29,7 +29,7 @@ Scenario('Like a restaurant', async (I) => {
   I.see('Favorit', '#favourite');
 });
 
-Scenario('Unlike a restaurant', async (I) => {
+Scenario('Unlike a restaurant', async ({ I }) => {
   I.amOnPage('/');
   I.click(locate('.button-cta')
     .first());
