@@ -19,7 +19,10 @@ const FavouriteButton = (status) => {
 const Detail = {
   render: async () => `
         <div class="full-container">
-            <img class="jumbotron" id="detail_picture" src="/images/heros/merchant.png" alt="jumbotron banner"/>
+            <picture>
+                <source media="(max-width: 600px)" id="detail_picture_small" srcset="/images/heros/merchant-small.jpg">
+                <img class="jumbotron" id="detail_picture" src="/images/heros/merchant-large.jpg" alt="jumbotron banner"/>
+            </picture>
             <h3 tabindex="0" id="content" class="content-overlay cus-title">Food For Everyone</h3>
         </div>
         <div class="container bg-theme">
@@ -56,6 +59,7 @@ const Detail = {
     `,
   afterRender: async () => {
     const restaurantImage = document.querySelector('#detail_picture');
+    const restaurantImageSmall = document.querySelector('#detail_picture_small');
     const restaurantTitle = document.querySelector('#content');
     const restaurantRating = document.querySelector('#detail_rating');
     const restaurantCity = document.querySelector('#detail_city');
@@ -71,6 +75,7 @@ const Detail = {
     const restaurant = await RestaurantApi.detail(restaurantId);
 
     restaurantImage.src = CONFIG.LARGE_IMAGE_URL + restaurant.pictureId;
+    restaurantImageSmall.srcset = CONFIG.SMALL_IMAGE_URL + restaurant.pictureId;
     restaurantTitle.innerHTML = restaurant.name;
     restaurantRating.innerHTML = restaurant.rating;
     restaurantCity.innerHTML = restaurant.city;
