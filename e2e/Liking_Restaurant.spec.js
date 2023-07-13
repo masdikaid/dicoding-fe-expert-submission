@@ -37,9 +37,19 @@ Scenario('Unlike a restaurant', async ({ I }) => {
   I.seeElement('#favourite');
   I.see('Tambah Favorit', '#favourite');
 
+  I.wait(5);
+
   I.click('#favourite');
   I.see('Favorit', '#favourite');
 
+  I.click('//a[text()="Favorite"]');
+  I.seeElement('.card');
+  I.click(locate('.button-cta')
+    .first());
+
   I.click('#favourite');
   I.see('Tambah Favorit', '#favourite');
+
+  I.click('//a[text()="Favorite"]');
+  I.dontSeeElement('.card');
 });

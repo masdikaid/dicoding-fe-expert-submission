@@ -4,7 +4,7 @@ const RestaurantCard = {
   render(restaurant) {
     return `
             <div tabindex="0" aria-label="${restaurant.name}" class="card">
-                <img src="${CONFIG.SMALL_IMAGE_URL + restaurant.pictureId}" class="lazyload" alt="Bring Your Phone Cafe">
+                <img data-src="${CONFIG.SMALL_IMAGE_URL + restaurant.pictureId}" class="lazyload" alt="Bring Your Phone Cafe">
                 <div class="content-overlay h-full flex-column content-space-beetwen">
                     <div class="flex card-badge content-space-beetwen">
                         <div class="flex content-space-around align-center ratting">
