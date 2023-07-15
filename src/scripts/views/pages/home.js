@@ -4,7 +4,10 @@ import RestaurantCard from '../component/restaurant-card';
 const Home = {
   render: async () => `
         <div class="full-container">
-            <img class="jumbotron" src="/images/heros/hero-image_4.jpg" alt="jumbotron banner"/>
+            <picture>
+                <source media="(max-width: 600px)" srcset="/images/heros/hero-image_4-small.jpg">
+                <img class="jumbotron" src="/images/heros/hero-image_4-large.jpg" alt="jumbotron banner"/>
+            </picture>
             <h3 class="content-overlay cus-title">Food For Everyone</h3>
         </div>
         <div class="container bg-theme">
@@ -16,11 +19,11 @@ const Home = {
         </div>
         <div class="flex content-space-beetwen sponsors">
             <div class="flex content-space-around sponsor-icon">
-                <img src="/assets/recc.png" alt="" srcset="">
-                <img src="/assets/recd.png" alt="" srcset="">
-                <img src="/assets/recf.png" alt="" srcset="">
-                <img src="/assets/recg.png" alt="" srcset="">
-                <img src="/assets/rece.png" alt="" srcset="">
+                <img src="/assets/recc.png" alt="" width="268" height="107" srcset="">
+                <img src="/assets/recd.png" alt="" width="268" height="107" srcset="">
+                <img src="/assets/recf.png" alt="" width="268" height="107" srcset="">
+                <img src="/assets/recg.png" alt="" width="268" height="107" srcset="">
+                <img src="/assets/rece.png" alt="" width="268" height="107" srcset="">
     
             </div>
             <div class="flex content-center align-center sponsor-title">
@@ -54,6 +57,7 @@ const Home = {
             <div id="about" class="flex content-center align-center about-title">
                 <h2 class="cus-title">
                     About Us
+                    
                 </h2>
             </div>
         </div>

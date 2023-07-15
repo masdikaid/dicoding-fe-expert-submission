@@ -6,20 +6,23 @@ import LikeButtonInitiator from '../../utils/like-button-initiator';
 const FavouriteButton = (status) => {
   if (status) {
     return `
-            <i class="fa fa-heart text-red" aria-hidden="true"></i>
-            <h4 id="detail_city" class="text-middle">Favorit</h4>
+            <i class="fa fa-heart text-red" aria-label="Unlike this restaurant" aria-hidden="true"></i>
+            <h4 id="fav-label" class="text-middle">Favorit</h4>
         `;
   }
   return `
-            <i class="fa fa-heart-o text-red" aria-hidden="true"></i>
-            <h4 id="detail_city" class="text-middle">Tambah Favorit</h4>
+            <i class="fa fa-heart-o text-red" aria-label="Like this restaurant" aria-hidden="true"></i>
+            <h4 id="fav-label" class="text-middle">Tambah Favorit</h4>
         `;
 };
 
 const Detail = {
   render: async () => `
         <div class="full-container">
-            <img class="jumbotron" id="detail_picture" src="/images/heros/merchant.png" alt="jumbotron banner"/>
+            <picture>
+                <source media="(max-width: 600px)" id="detail_picture_small" srcset="/images/heros/merchant-small.jpg">
+                <img class="jumbotron" id="detail_picture" src="/images/heros/merchant-large.jpg" alt="jumbotron banner"/>
+            </picture>
             <h3 tabindex="0" id="content" class="content-overlay cus-title">Food For Everyone</h3>
         </div>
         <div class="container bg-theme">
@@ -46,8 +49,8 @@ const Detail = {
             <div id="detail_drinks" class="flex-row flex-wrap"></div>
             <h4>Review</h4>
             <form id="review_form">
-                <input class="review-input" type="text" placeholder="Nama anda...">
-                <textarea class="review-input" rows="5" placeholder="Tulis review anda disini..."></textarea>
+                <input class="review-input" name="nama" type="text" placeholder="Nama anda...">
+                <textarea class="review-input" name="review" rows="5" placeholder="Tulis review anda disini..."></textarea>
                 <p id="err_review_form" class="text-error text-red"></p>
                 <button type="submit" class="button-cta">Kirim</button>
             </form>   
@@ -56,6 +59,7 @@ const Detail = {
     `,
   afterRender: async () => {
     const restaurantImage = document.querySelector('#detail_picture');
+    const restaurantImageSmall = document.querySelector('#detail_picture_small');
     const restaurantTitle = document.querySelector('#content');
     const restaurantRating = document.querySelector('#detail_rating');
     const restaurantCity = document.querySelector('#detail_city');
@@ -71,6 +75,7 @@ const Detail = {
     const restaurant = await RestaurantApi.detail(restaurantId);
 
     restaurantImage.src = CONFIG.LARGE_IMAGE_URL + restaurant.pictureId;
+    restaurantImageSmall.srcset = CONFIG.SMALL_IMAGE_URL + restaurant.pictureId;
     restaurantTitle.innerHTML = restaurant.name;
     restaurantRating.innerHTML = restaurant.rating;
     restaurantCity.innerHTML = restaurant.city;
